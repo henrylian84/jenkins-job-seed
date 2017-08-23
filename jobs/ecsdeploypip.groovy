@@ -4,6 +4,6 @@ pipelineJob("ecs-deploy-pipeline"){
         github('henrylian84/ecs-deploy', 'master')
     }
     steps {
-        echo("hello")
+
     }
 }
