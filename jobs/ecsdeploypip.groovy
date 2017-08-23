@@ -3,7 +3,7 @@ pipelineJob("ecs-deploy-pipeline"){
     scm {
         github('henrylian84/ecs-deploy', 'master')
     }
-    step {
+    steps {
         echo('hello')
     }
 }
