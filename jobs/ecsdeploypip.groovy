@@ -4,13 +4,11 @@ pipelineJob("springboot-demo-pipeline"){
     definition{
         cpsScm{
             scm {
-                git {
-                    remote {
-                        url("https://github.com/henrylian84/springbootdemo.git")
+                github('henrylian84/springbootdemo', 'master')
+                configure { gitscm ->
+                    gitscm / 'extensions' << 'hudson.plugins.git.extensions.impl.SubmoduleOption' {
+                        recursiveSubmodules(true)
                     }
-                    branch("master")
-                    // All submodules recursively
-                    recursiveSubmodules()
                 }
             }
             scriptPath("deploy/Jenkinsfile")
