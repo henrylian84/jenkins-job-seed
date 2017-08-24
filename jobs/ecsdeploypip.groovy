@@ -10,11 +10,11 @@ pipelineJob("springboot-demo-pipeline"){
                     }
                     branch("master")
                     // All submodules recursively
-                    extensions(
-                        submoduleOptions {
-                            recursive(true)
+                    configure { gitscm ->
+                        gitscm / 'extensions' << 'hudson.plugins.git.extensions.impl.SubmoduleOption' {
+                            recursiveSubmodules(true)
                         }
-                    )
+                    }
                 }
             }
             scriptPath("deploy/Jenkinsfile")
