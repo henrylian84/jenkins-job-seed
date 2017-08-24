@@ -5,6 +5,7 @@ pipelineJob("springboot-demo-pipeline"){
         cpsScm{
             scm {
                 github('henrylian84/springbootdemo', 'master')
+                recursiveSubmodules(true)
             }
             scriptPath("deploy/Jenkinsfile")
         }
