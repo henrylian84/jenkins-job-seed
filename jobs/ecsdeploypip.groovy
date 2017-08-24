@@ -1,12 +1,12 @@
-pipelineJob("ecs-deploy-pipeline"){
+pipelineJob("springboot-demo-pipeline"){
     jdk('Java 8')
 
     definition{
         cpsScm{
             scm {
-                github('henrylian84/ecs-deploy', 'master')
+                github('henrylian84/springbootdemo', 'master')
             }
-            scriptPath("Jenkinsfile")
+            scriptPath("deploy/Jenkinsfile")
         }
     }
     steps {
