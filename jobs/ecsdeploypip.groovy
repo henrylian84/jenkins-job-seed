@@ -10,7 +10,10 @@ pipelineJob("springboot-demo-pipeline"){
                     }
                     branch("master")
                     // All submodules recursively
-                    recursiveSubmodules(true)
+                    submoduleOptions {
+                        recursive()
+                        tracking()
+                    }
                 }
             }
             scriptPath("deploy/Jenkinsfile")
